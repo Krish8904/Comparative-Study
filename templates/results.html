@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Comparison Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-8 max-w-2xl w-full">
+        <h2 class="text-2xl font-bold mb-4 text-center">Model Accuracy Results</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="border border-gray-300 px-4 py-2">Model</th>
+                        <th class="border border-gray-300 px-4 py-2">Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for model, accuracy in results.items() %}
+                        <tr class="bg-gray-100 even:bg-gray-200">
+                            <td class="border border-gray-300 px-4 py-2 font-semibold">{{ model }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ accuracy }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="text-center">
+            <a href="/" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">Upload Another Dataset</a>
+        </div>
+    </div>
+</body>
+</html>
